@@ -3,23 +3,16 @@ spring:
     name: spring-boot-homework
 
   datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: ""
+    url: jdbc:postgresql://localhost:5432/student_api_db
+    username: appuser
+    password: secretpassword
 
   jpa:
     hibernate:
-      ddl-auto: update
-    show-sql: false
+      ddl-auto: none
     properties:
       hibernate:
-        format_sql: true
-
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
   security:
     oauth2:

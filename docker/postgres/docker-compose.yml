@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres
+    container_name: student-api-db-container
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: student_api_db
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: secretpassword
+    ports:
+      - "5432:5432"
